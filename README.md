@@ -1,2 +1,3 @@
 # Deep Dive Into Modern Web Development
-![blocks](./assets//blocks.svg)
+<img src="./assets/blocks.svg" alt="blocks" width="300" height="200">
+
