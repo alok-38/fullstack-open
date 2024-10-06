@@ -1,3 +1,0 @@
-let notes = [];
-
-const redrawNotes =
