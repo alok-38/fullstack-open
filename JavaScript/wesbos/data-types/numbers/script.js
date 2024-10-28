@@ -1,0 +1,13 @@
+const age = 40;
+const name = "Alok";
+const smarties = 20;
+const kids = 6;
+const eachKidGets = smarties / kids;
+console.log(`Each kid gets ${Math.ceil(eachKidGets)} smarties`);
+console.log(`Each kid gets ${Math.floor(eachKidGets)} smarties`);
+const dadGets = smarties % kids;
+console.log(`Dad gets ${dadGets} smarties`);
+console.log(parseInt(0.1 + 0.2));
+console.log(parseFloat(0.1 + 0.2));
+console.log(0.1 + 0.2);
+console.log(Math.round(0.1 + 0.2),2);
