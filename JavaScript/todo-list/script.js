@@ -1,6 +1,6 @@
 const formEl = document.querySelector('form');
 const inputEl = document.querySelector('input');
-const listEl = document.getElementById('list'); // Assuming you have <ul> or <ol> here, not <div>
+const listEl = document.getElementById('list');
 
 formEl.addEventListener('submit', event => {
     event.preventDefault();
