@@ -1,0 +1,108 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #143F6B;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.piano {
+    display: flex;
+    position: relative;
+}
+
+.key {
+    height: calc(var(--width) * 4);
+    width: var(--width);
+}
+
+.white {
+    --width: 100px;
+    background-color: white;
+    border: 1px solid #333;
+}
+
+.white.active {
+    background-color: #CCC;
+    /* Light color when active */
+}
+
+.white:hover {
+    background-color: #f0f0f0;
+    /* Slight hover effect */
+}
+
+.black {
+    --width: 60px;
+    background-color: black;
+    margin-left: calc(var(--width) / -2);
+    margin-right: calc(var(--width) / -2);
+    z-index: 2;
+}
+
+.black.active {
+    background-color: #333;
+    /* Darker color when active */
+}
+
+.black:hover {
+    background-color: #555;
+    /* Slight hover effect */
+}
+
+/* Prevent overlap and adjust positioning */
+.white[data-note="C"] {
+    left: 0;
+}
+
+.white[data-note="D"] {
+    left: 100px;
+}
+
+.white[data-note="E"] {
+    left: 200px;
+}
+
+.white[data-note="F"] {
+    left: 300px;
+}
+
+.white[data-note="G"] {
+    left: 400px;
+}
+
+.white[data-note="A"] {
+    left: 500px;
+}
+
+.white[data-note="B"] {
+    left: 600px;
+}
+
+/* Black keys positioning */
+.black[data-note="Db"] {
+    left: 60px;
+}
+
+.black[data-note="Eb"] {
+    left: 160px;
+}
+
+.black[data-note="Gb"] {
+    left: 260px;
+}
+
+.black[data-note="Ab"] {
+    left: 360px;
+}
+
+.black[data-note="Bb"] {
+    left: 460px;
+}
