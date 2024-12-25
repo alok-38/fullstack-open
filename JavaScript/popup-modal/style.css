@@ -1,0 +1,84 @@
+#modal.open {
+    display: block;
+}
+
+#overlay.open {
+    display: block;
+}
+
+#modal {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    padding: 1rem;
+    border-radius: .25rem;
+    background-color: blueviolet;
+    color: floralwhite;
+    padding: 2rem;
+    width: 300px;
+    height: 150px;
+    text-align: center;
+}
+
+#modal button {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    background-color: floralwhite;
+    width: 175px;
+    border-radius: 2.5px;
+    color: blueviolet;
+    transition: all 0.3s ease;
+}
+
+#modal button:hover {
+    background-color: rgb(247, 245, 248);
+    cursor: pointer;
+}
+
+#modal button:active {
+    transform: scale(0.98);
+}
+
+#modal button:focus {
+    box-shadow: 0 0 5px 2px rgba(25, 25, 25, 0.6);
+}
+
+#overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .75);
+}
+
+#open-modal-btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    background-color: blueviolet;
+    width: 175px;
+    border-radius: 2.5px;
+    color: floralwhite;
+    transition: all 0.3s ease;
+}
+
+#open-modal-btn:hover {
+    background-color: rgb(150, 64, 230);
+    cursor: pointer;
+}
+
+#open-modal-btn:active {
+    transform: scale(0.98);
+}
+
+#open-modal-btn:focus {
+    box-shadow: 0 0 5px 2px rgba(25, 25, 25, 0.6);
+}
