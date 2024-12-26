@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#alert {
+    display: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.6;
+    background-color: rgb(240, 177, 240);
+}
+
+form {
+    background-color: #ffffff;
+    padding: 5rem;
+    border-radius: 5px;
+}
+
+.question-item {
+    margin-bottom: 2rem;
+}
+
+.question-item div {
+    margin-bottom: .5rem;
+}
+
+button {
+    background: transparent;
+    outline: none;
+    border: none;
+    background-color: orange;
+    color: #ffffff;
+    padding: 15px 45px;
+    transition: background-color 0.3s, transform 0.2s;
+    border-radius: 2.5px;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: darkorange;
+    /* Change to a darker orange on hover */
+    cursor: pointer;
+    /* Change the cursor to a pointer on hover */
+}
+
+button:focus {
+    outline: 3px solid #ffffff;
+    /* Add a white outline when focused */
+    outline-offset: 3px;
+    /* Offset the outline to give space around the button */
+}
+
+button:active {
+    background-color: orangered;
+    /* Change to a redder shade on click */
+    transform: scale(0.98);
+    /* Slightly shrink the button when clicked */
+}

@@ -14,12 +14,51 @@ const NOTE_DETAILS = [
 ]
 
 document.addEventListener('keydown', e => {
+    // Avoid creating the keydown event continously
     if (e.repeat) return;
+    const keyCode = e.code;
+    const noteDetail = getNoteDetail(keyCode);
+
+    if (noteDetail == null) return;
+
+    noteDetail.active = true;
+
+    playNotes()
+
 })
 
 document.addEventListener('keyup', e => {
+    const keyCode = e.code;
+    const noteDetail = getNoteDetail(keyCode);
+
+    if (noteDetail == null) {
+        return;
+    }
+
+    noteDetail.active = false;
+    playNotes();
+
 })
 
+// Get the individual note based on the key we press
 function getNoteDetail(keyboardKey) {
-    return NOTE_DETAILS.find(noteDetails => `key${noteDetails.key}` === keyboardKey)
+    return NOTE_DETAILS.find(n => `Key${n.key}` === keyboardKey);
+}
+
+
+function playNotes() {
+    NOTE_DETAILS.forEach(n => {
+        const keyElement = document.querySelector(`[data-note="${n.note}"]`)
+        keyElement.classList.toggle("active", n.active || false);
+    })
+
+    const activeNotes = NOTE_DETAILS.filter(n => n.active);
+
+    activeNotes.forEach(n => {
+        startNote(n);
+    })
+}
+
+function startNote(noteDetail) {
+
 }
