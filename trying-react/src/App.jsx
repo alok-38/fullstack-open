@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import './App.css';
-import Button from './components/Button';
-import Nav from './components/Nav';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import RootLayout from './layouts/RootLayout';
 
 const App = () => {
   useEffect(() => {
@@ -9,11 +11,14 @@ const App = () => {
     document.documentElement.lang = 'en';
   })
   return (
-    <main>
-      <Nav />
-      <h1>Rsbuild with React</h1>
-      <Button />
-    </main>
+    <Router>
+      <Routes>
+        <Route path='/' element={<RootLayout />}>
+          <Route index path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 };
 
