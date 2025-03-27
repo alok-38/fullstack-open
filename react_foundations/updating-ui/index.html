@@ -12,19 +12,28 @@
     <!-- Babel Script -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/jsx">
-      //   const app = document.getElementById("app");
-      //   // Create a new h1 element
-      //   const h1Element = document.createElement("h1");
-      //   // Create a text node
-      //   const text = "From JS to React";
-      //   const h1ElementContent = document.createTextNode(text);
-      //   // Append this to the h1 element
-      //   h1Element.appendChild(h1ElementContent);
-      //   // Place this inside the div
-      //   app.appendChild(h1Element);
+      // Using props
+
+      function Header({title}) {
+        return <h1>{title ? title : "Default title"}</h1>;
+      }
+
+      function AnotherHeader({title}) {
+        return <h2>{title ? title: "React!"} </h2>;
+      }
+
+      function HomePage() {
+        return (
+          <div>
+            <Header title="React" />
+            <AnotherHeader title="Vue" />
+          </div>
+        )
+      }
+
       const app = document.getElementById("app");
       const root = ReactDOM.createRoot(app);
-      root.render(<h1>Now using React!</h1>);
+      root.render(<HomePage />);
     </script>
   </body>
 </html>
