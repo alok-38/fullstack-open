@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Number Type</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <!-- React and Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Inline TSX with Babel -->
+    <script type="text/babel" data-presets="typescript,react">
+      function App() {
+        // Add string array type annotation here
+        const tasks: string[] = ['Learn TypeScript', 'Build a React app'];
+
+        // Add type annotation to the parameter and fix mutation issue
+        function addTask(newTask: string): string[] {
+          // Return a new array instead of mutating the original
+          return [...tasks, newTask];
+        }
+
+        // Add a new task
+        const updatedTasks: string[] = addTask('Practice array types');
+
+        return (
+          <div className="task-list">
+            <h1>My Tasks</h1>
+            <div className="tasks-card">
+              <ul>
+                {updatedTasks.map((task: string, index: number) => (
+                  <li key={index}>{task}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById('app'));
+      root.render(<App />);
+    </script>
+  </body>
+</html>
