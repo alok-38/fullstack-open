@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ternary operator practice in ES6</title>
+  </head>
+  <body>
+    <script>
+      // condition ? expressionIfTrue : expressionIfFalse;
+      const age = 20;
+      const canVote = age >= 21 ? 'Yes' : 'No';
+      console.log(canVote);
+      // Nested ternary
+      const score = 50;
+      const grade =
+        score >= 90 ? 'A' : score >= 80 ? 'B' : score >= 70 ? 'C' : 'F';
+      console.log(grade);
+      // Fizz Buzz
+      const fizzBuzz = (number) => {
+        if (number % 3 === 0 && number % 5 === 0) return 'FizzBuzz';
+        if (number % 3 === 0) return 'Fizz';
+        if (number % 5 === 0) return 'Buzz';
+        return number;
+      };
+      console.log(fizzBuzz(15));
+    </script>
+  </body>
+</html>
